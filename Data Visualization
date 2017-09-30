@@ -1,1 +1,18 @@
+#Code for Data Analytics and Visualization
+
+x = mtcars[order(mtcars$mpg),] #Order function sort with given parameter
+x$cyl = factor(x$gear) # it must be a factor
+x$color[x$cyl==4] = "green"
+x$color[x$cyl==3] = "Black"
+x$color[x$cyl==5] = "Red"
+dotchart(x$mpg,labels=row.names(x),cex=.7,groups= x$gearl,
+         main="Gas Milage for Car Models\n grouped by GEARS (Green Cars have 4 Gears)",
+         xlab="Miles per Gallon", gcolor="black", color=x$color)
+
+y = mtcars[order(mtcars$hp),] #Order function sort with given parameter
+y$cyl = factor(x$qsec) # it must be a factor
+y$color[x$hp < 120] = "green"
+dotchart(y$mpg,labels=row.names(y),cex=.9,
+         main="Speed per quater \n grouped by Hourse power under 120",
+         xlab="Speed per Quater", gcolor="black", color=y$color)
 
